@@ -7,15 +7,16 @@ public:
 	DelayGenerator();
 	~DelayGenerator();
 	double generateDelay(double* input);
-	void setDelaySample(double delaySam); 
-	void setFeedback(double feedback); 
+	void setDelaySample(double delaySam_ms); 
+	void setFeedback(double feedback_pct); 
 	void setSampleRate(double sr);
 	void resetDelay(); 
-	void cookVars();
+	void setWetness(float wetness_pct);
 
 private:
 	double mFeedback = 0.;
 	double mDelaySam = 0.;
+	float wetLevel; 
 
 	double* mpBuffer = nullptr;
 	int mReadIndex = 0;

@@ -205,7 +205,8 @@ void OscillatorGenerator::cookFrequency() {
 }
 
 void OscillatorGenerator::setSampleRate(float sr) {
-	sr = m_nSampleRate;
+	m_nSampleRate = sr; 
+	reset();
 }
 
 void OscillatorGenerator::setMode(Mode m) {

@@ -16,7 +16,7 @@ double DelayGenerator::generateDelay(double* input)
 	// first we read our delayed output
 	double yn = mpBuffer[mReadIndex];
 
-	// if delay < 1 sampe, interpolate between intpu x(n) and x(n-1)
+	// if delay < 1 sample, interpolate between intpu x(n) and x(n-1)
 	if (mReadIndex == mWriteIndex && mDelaySam < 1.00)
 	{
 		// interpolate x(n) with x(n-1), set yn = input 
@@ -64,13 +64,13 @@ double DelayGenerator::generateDelay(double* input)
 		mReadIndex = 0;
 	}
 
-	// now return the sample 
-	return yn; 
+	// now return the sample with correct wet/dry mix
+	return wetLevel *  yn + (1.0 - wetLevel) * *input; 
 }
 
-void DelayGenerator::setDelaySample(double delaySam) 
+void DelayGenerator::setDelaySample(double delaySam_ms) 
 {
-	this->mDelaySam = delaySam; 
+	this->mDelaySam = delaySam_ms * ((float)sampleRate / 1000.0); 
 	mReadIndex = mWriteIndex - (int)mDelaySam;
 	if (mReadIndex < 0)
 	{
@@ -78,15 +78,20 @@ void DelayGenerator::setDelaySample(double delaySam)
 	}
 }
 
-void DelayGenerator::setFeedback(double feedback)
+void DelayGenerator::setFeedback(double feedback_pct)
 {
-	this->mFeedback = feedback;
+	this->mFeedback = feedback_pct / 100;
 }
 
 void DelayGenerator::setSampleRate(double sampleR) 
 {
 	this->sampleRate = sampleR;
 	resetDelay(); 
+}
+
+void DelayGenerator::setWetness(float wetness_pct)
+{
+	this->wetLevel = wetness_pct / 100;
 }
 
 void DelayGenerator::resetDelay() 

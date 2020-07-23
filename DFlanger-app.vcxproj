@@ -281,6 +281,7 @@
     <ClInclude Include="DelayGenerator.h" />
     <ClInclude Include="DFlanger.h" />
     <ClInclude Include="LinInterp.h" />
+    <ClInclude Include="ModDelayGenerator.h" />
     <ClInclude Include="OscillatorGenerator.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -296,6 +297,7 @@
     <ClCompile Include="DelayGenerator.cpp" />
     <ClCompile Include="DFlanger.cpp" />
     <ClCompile Include="LinInterp.cpp" />
+    <ClCompile Include="ModDelayGenerator.cpp" />
     <ClCompile Include="OscillatorGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
