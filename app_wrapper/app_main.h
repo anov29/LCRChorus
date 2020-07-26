@@ -12,9 +12,9 @@
 
  App settings are stored in a .ini file. The location is as follows:
 
- Windows7: C:\Users\USERNAME\AppData\Local\DFlanger\settings.ini
- Windows XP/Vista: C:\Documents and Settings\USERNAME\Local Settings\Application Data\DFlanger\settings.ini
- OSX: /Users/USERNAME/Library/Application\ Support/DFlanger/settings.ini
+ Windows7: C:\Users\USERNAME\AppData\Local\LCRChorus\settings.ini
+ Windows XP/Vista: C:\Documents and Settings\USERNAME\Local Settings\Application Data\LCRChorus\settings.ini
+ OSX: /Users/USERNAME/Library/Application\ Support/LCRChorus/settings.ini
 
 */
 
@@ -44,7 +44,7 @@
 #include <string>
 #include <vector>
 
-#include "../DFlanger.h" // change this to match your iplug plugin .h file
+#include "../LCRChorus.h" // change this to match your iplug plugin .h file
 
 typedef unsigned short UInt16;
 

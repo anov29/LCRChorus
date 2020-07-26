@@ -1,32 +1,32 @@
 #define PLUG_MFR "Andrew"
-#define PLUG_NAME "DFlanger5"
+#define PLUG_NAME "LCRChorus5"
 
-#define PLUG_CLASS_NAME DFlanger
+#define PLUG_CLASS_NAME LCRChorus
 
 #define BUNDLE_MFR "Andrew"
-#define BUNDLE_NAME "DFlanger"
+#define BUNDLE_NAME "LCRChorus"
 
-#define PLUG_ENTRY DFlanger_Entry
-#define PLUG_FACTORY DFlanger_Factory
-#define PLUG_VIEW_ENTRY DFlanger_ViewEntry
+#define PLUG_ENTRY LCRChorus_Entry
+#define PLUG_FACTORY LCRChorus_Factory
+#define PLUG_VIEW_ENTRY LCRChorus_ViewEntry
 
-#define PLUG_ENTRY_STR "DFlanger_Entry"
-#define PLUG_VIEW_ENTRY_STR "DFlanger_ViewEntry"
+#define PLUG_ENTRY_STR "LCRChorus_Entry"
+#define PLUG_VIEW_ENTRY_STR "LCRChorus_ViewEntry"
 
-#define VIEW_CLASS DFlanger_View
-#define VIEW_CLASS_STR "DFlanger_View"
+#define VIEW_CLASS LCRChorus_View
+#define VIEW_CLASS_STR "LCRChorus_View"
 
 // Format        0xMAJR.MN.BG - in HEX! so version 10.1.5 would be 0x000A0105
 #define PLUG_VER 0x00010000
 #define VST3_VER_STR "1.0.0"
 
-#define PLUG_COPYRIGHT  "Copyright 2017 Acme Inc"
+#define PLUG_COPYRIGHT  "Copyright 2020 Anovitskiy"
 
 // http://service.steinberg.de/databases/plugin.nsf/plugIn?openForm
 // 4 chars, single quotes. At least one capital letter
-#define PLUG_UNIQUE_ID 'Ipef'
+#define PLUG_UNIQUE_ID 'LCRC'
 // make sure this is not the same as BUNDLE_MFR
-#define PLUG_MFR_ID 'Acme'
+#define PLUG_MFR_ID 'LCRChorus'
 
 // ProTools stuff
 
@@ -37,7 +37,7 @@
 #endif
 
 #define PLUG_MFR_PT "Andrew\nAndrew\nAcme"
-#define PLUG_NAME_PT "DFlanger\nIPEF"
+#define PLUG_NAME_PT "LCRChorus\nIPEF"
 #define PLUG_TYPE_PT "Effect"
 #define PLUG_DOES_AUDIOSUITE 1
 
@@ -61,12 +61,14 @@ instrument determined by PLUG _IS _INST
 #define ISWITCHCONTROL_2_ID     101
 #define IRADIOBUTTONSCONTROL_ID 103
 #define IFADERCONTROL_VERT_ID   106
+#define KNOB_ID					107
 
 // Image resource locations for this plug.
 #define BG_FN					  "resources/img/background.png"
 #define ISWITCHCONTROL_2_FN       "resources/img/onoff.png"
 #define IRADIOBUTTONSCONTROL_FN   "resources/img/button.png"
 #define IFADERCONTROL_VERT_FN     "resources/img/fader.png"
+#define KNOB_FN					  "resources/img/knob.png"
 
 // GUI default dimensions
 #define GUI_WIDTH 500

@@ -6,7 +6,7 @@ REM - zipping requires 7zip in %ProgramFiles%\7-Zip\7z.exe
 REM - building installer requires innotsetup in "%ProgramFiles(x86)%\Inno Setup 5\iscc"
 REM - AAX codesigning requires ashelper tool added to %PATH% env variable and aax.key/.crt in .\..\..\..\Certificates\
 
-echo Making DFlanger win distribution ...
+echo Making LCRChorus win distribution ...
 
 echo ------------------------------------------------------------------
 echo Updating version numbers ...
@@ -33,10 +33,10 @@ REM - set preprocessor macros like this, for instance to enable demo build:
 REM - SET CMDLINE_DEFINES="DEMO_VERSION"
 
 REM - Could build individual targets like this:
-REM - msbuild DFlanger-app.vcxproj /p:configuration=release /p:platform=win32
+REM - msbuild LCRChorus-app.vcxproj /p:configuration=release /p:platform=win32
 
-msbuild DFlanger.sln /p:configuration=release /p:platform=win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly 
-msbuild DFlanger.sln /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly;append
+msbuild LCRChorus.sln /p:configuration=release /p:platform=win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly 
+msbuild LCRChorus.sln /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly;append
 
 #echo ------------------------------------------------------------------
 #echo Code sign aax binary...
@@ -51,18 +51,18 @@ echo Making Installer ...
 if exist "%ProgramFiles(x86)%" (goto 64-Bit-is) else (goto 32-Bit-is)
 
 :32-Bit-is
-"%ProgramFiles%\Inno Setup 5\iscc" /cc ".\installer\DFlanger.iss"
+"%ProgramFiles%\Inno Setup 5\iscc" /cc ".\installer\LCRChorus.iss"
 goto END-is
 
 :64-Bit-is
-"%ProgramFiles(x86)%\Inno Setup 5\iscc" /cc ".\installer\DFlanger.iss"
+"%ProgramFiles(x86)%\Inno Setup 5\iscc" /cc ".\installer\LCRChorus.iss"
 goto END-is
 
 :END-is
 
 REM - ZIP
-REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\DFlanger-win-32bit.zip .\build-win\app\win32\bin\DFlanger.exe .\build-win\vst3\win32\bin\DFlanger.vst3 .\build-win\vst2\win32\bin\DFlanger.dll .\build-win\rtas\bin\DFlanger.dpm .\build-win\rtas\bin\DFlanger.dpm.rsr .\build-win\aax\bin\DFlanger.aaxplugin* .\installer\license.rtf .\installer\readmewin.rtf
-REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\DFlanger-win-64bit.zip .\build-win\app\x64\bin\DFlanger.exe .\build-win\vst3\x64\bin\DFlanger.vst3 .\build-win\vst2\x64\bin\DFlanger.dll .\installer\license.rtf .\installer\readmewin.rtf
+REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\LCRChorus-win-32bit.zip .\build-win\app\win32\bin\LCRChorus.exe .\build-win\vst3\win32\bin\LCRChorus.vst3 .\build-win\vst2\win32\bin\LCRChorus.dll .\build-win\rtas\bin\LCRChorus.dpm .\build-win\rtas\bin\LCRChorus.dpm.rsr .\build-win\aax\bin\LCRChorus.aaxplugin* .\installer\license.rtf .\installer\readmewin.rtf
+REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\LCRChorus-win-64bit.zip .\build-win\app\x64\bin\LCRChorus.exe .\build-win\vst3\x64\bin\LCRChorus.vst3 .\build-win\vst2\x64\bin\LCRChorus.dll .\installer\license.rtf .\installer\readmewin.rtf
 
 echo ------------------------------------------------------------------
 echo Printing log file to console...

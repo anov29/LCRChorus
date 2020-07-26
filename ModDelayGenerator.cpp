@@ -34,7 +34,12 @@ void ModDelayGenerator::updateDL(float feedBack_pct)
 	}
 }
 
-void ModDelayGenerator::setModType(Mod modType) 
+void ModDelayGenerator::invertLFO(bool invert)
+{
+	lfo.invert(invert);
+}
+
+void ModDelayGenerator::setModType(Mod modType)
 {
 	this->modType = modType;
 	switch (modType)
@@ -77,6 +82,17 @@ void ModDelayGenerator::setChorusOffset(float chorusOffset)
 	this->chorusOffset = chorusOffset; 
 }
 
+void ModDelayGenerator::setPhase(Phase p)
+{
+	this->phaseType = p;
+}
+
+void ModDelayGenerator::setSampleRate(float sample)
+{
+	lfo.setSampleRate(sample);
+	delayLine.setSampleRate(sample);
+}
+
 float ModDelayGenerator::calculateDelayOffset(float LFOSample) {
 	if (modType == flanger || modType == vibrato)
 	{
@@ -89,12 +105,6 @@ float ModDelayGenerator::calculateDelayOffset(float LFOSample) {
 	}
 }
 
-void ModDelayGenerator::setSampleRate(float sample)
-{
-	lfo.setSampleRate(sample);
-	delayLine.setSampleRate(sample);
-}
-
 double ModDelayGenerator::generate(double * input)
 {
 	// 1. Get LFO values, normal and quad phase
@@ -104,7 +114,14 @@ double ModDelayGenerator::generate(double * input)
 
 	// 2. Generate delay offset, for now ignore quad 
 	float delay = 0.0;
-	delay = calculateDelayOffset(y); 
+	if (phaseType == Phase::quad) 
+	{
+		delay = calculateDelayOffset(y_q);
+	}
+	else 
+	{
+		delay = calculateDelayOffset(y); 
+	}
 	
 	// 3. Set the delay
 	delayLine.setDelaySample(delay);

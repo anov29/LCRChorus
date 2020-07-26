@@ -5,7 +5,7 @@ public:
 	OscillatorGenerator();
 	~OscillatorGenerator();
 
-	enum Waveform { sine, saw, tri, square };
+	enum Waveform { sine, tri, saw, square };
 	enum Mode { normal, band_limit };
 	enum Polarity { bipolar, unipolar };
 
@@ -16,6 +16,7 @@ public:
 	void setPolarity(Polarity p);
 	void setSampleRate(float sr);
 	void generate(double* pYn, double* pYqn);
+	void invert(bool invert); 
 	void reset();
 
 private:
@@ -41,6 +42,6 @@ private:
 	float m_fFrequency_Hz = 440.0; // the frequency 
 	float m_nSampleRate = 44100;
 
-	bool m_bInvert;
+	bool previously_inverted = false;
 };
 

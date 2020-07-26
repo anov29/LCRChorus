@@ -199,6 +199,31 @@ void OscillatorGenerator::generate(double* pYn, double* pYqn) {
 	}
 }
 
+void OscillatorGenerator::invert(bool invert)
+{
+	if (invert)
+	{
+		previously_inverted = true; // output now inverted 
+		m_fReadIndex += 512;
+		if (m_fReadIndex > 1024) {
+			m_fReadIndex = m_fReadIndex - 1024;
+		}
+		m_fQuadPhaseReadIndex += 512; 
+		if (m_fQuadPhaseReadIndex > 1024) {
+			m_fQuadPhaseReadIndex = m_fQuadPhaseReadIndex - 1024;
+		}
+	}
+	else 
+	{
+		if (previously_inverted) 
+		{
+			reset(); 
+		}
+		previously_inverted = false; 
+	} // if not previously inverted, don't do anything 
+
+}
+
 
 void OscillatorGenerator::cookFrequency() {
 	m_f_inc = 1024.0 * m_fFrequency_Hz / m_nSampleRate;
@@ -232,6 +257,6 @@ void OscillatorGenerator::setPolarity(Polarity p) {
 
 void OscillatorGenerator::reset() {
 	m_fReadIndex = 0;
-	m_fQuadPhaseReadIndex = 0;
+	m_fQuadPhaseReadIndex = 256; // 1/4 of 1024 point buffer
 	cookFrequency();
 }
