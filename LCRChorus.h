@@ -20,8 +20,6 @@ private:
 	ModDelayGenerator modDelayCenter;
 	ModDelayGenerator modDelayRight;
 
-	void updateModules();
-
 	double mFeedback = 0.;
 	double mDelaySam = 0.;
 	double mWet = 0.;
@@ -30,6 +28,10 @@ private:
 	int mReadIndex = 0;
 	int mWriteIndex = 0;
 	int mBufferSize = 0;
+
+	double gain = .5; 
+	double wet = .5; 
+	bool on = true; 
 };
 
 #endif

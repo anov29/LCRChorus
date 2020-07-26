@@ -18,80 +18,84 @@ enum EParams
 	RFeedbackFaderParam,
 	ChorusFaderParam, 
 	LFOParam,
-	ModParam,
 	PolarityParam,
 	OnOffParam,
+	KnobGainControl, 
+	KnobDryWetControl,
 	kNumParams
 };
 
 enum ELayout
 {
-  kWidth = GUI_WIDTH,
-  kHeight = GUI_HEIGHT,
+	kWidth = GUI_WIDTH,
+	kHeight = GUI_HEIGHT,
 
-  l_FaderDepth_L = 120,
-  l_FaderDepth_Vert_X = 5,
-  l_FaderDepth_Vert_Y = 157,
-  c_FaderDepth_L = 120,
-  c_FaderDepth_Vert_X = 169,
-  c_FaderDepth_Vert_Y = 157,
-  r_FaderDepth_L = 120,
-  r_FaderDepth_Vert_X = 340,
-  r_FaderDepth_Vert_Y = 157,
-  l_FaderRate_L = 120,
-  l_FaderRate_Vert_X = 51,
-  l_FaderRate_Vert_Y = 157,
-  c_FaderRate_L = 120,
-  c_FaderRate_Vert_X = 216,
-  c_FaderRate_Vert_Y = 157,
-  r_FaderRate_L = 120,
-  r_FaderRate_Vert_X = 386,
-  r_FaderRate_Vert_Y = 157,
-  l_FaderFeedback_L = 120,
-  l_FaderFeedback_Vert_X = 105,
-  l_FaderFeedback_Vert_Y = 157,
-  c_FaderFeedback_L = 120,
-  c_FaderFeedback_Vert_X = 270,
-  c_FaderFeedback_Vert_Y = 157,
-  r_FaderFeedback_L = 120,
-  r_FaderFeedback_Vert_X = 440,
-  r_FaderFeedback_Vert_Y = 157,
-  l_CC_Depth_X = -3,
-  l_CC_Depth_Y = 277,
-  c_CC_Depth_X = 160,
-  c_CC_Depth_Y = 277,
-  r_CC_Depth_X = 330,
-  r_CC_Depth_Y = 277,
-  l_CC_Rate_X = 45,
-  l_CC_Rate_Y = 277,
-  c_CC_Rate_X = 209,
-  c_CC_Rate_Y = 277,
-  r_CC_Rate_X = 377,
-  r_CC_Rate_Y = 277,
-  l_CC_Feedback_X = 97,
-  l_CC_Feedback_Y = 277,
-  c_CC_Feedback_X = 265,
-  c_CC_Feedback_Y = 277,
-  r_CC_Feedback_X = 430,
-  r_CC_Feedback_Y = 277,
-  kICC_W = 70,
-  kICC_H = 30,
-  kIRadioButtonsControl_N = 2,
-  kIRBC_W = 96,  // width of bitmap
-  kIRBC_H = 26,  // height of one of the bitmap images + 2 for image border 
-  kIRadioButtonsControl_V_X_LFO = 315,
-  kIRadioButtonsControl_V_Y_LFO = 40,
-  kLFObuttons = 2,  // number of vertical buttons for waveform
-  kModButtons = 3,  // number of vertical buttons for mode
-  // ITextControl
-  kITC_X = 115,  // fext for waveform 
-  kITC_Y = 155,
-  kITC_W = 100,
-  kITC_H = 20,
-  kITC_X_M = 235, // text for mode
-  kISwitchControl_2_N = 2,  // # of sub-bitmaps.
-  kISwitchControl_2_X = 75,  // position of left side of control
-  kISwitchControl_2_Y = 55,  // position of top of control
+	l_FaderDepth_L = 120,
+	l_FaderDepth_Vert_X = 5,
+	l_FaderDepth_Vert_Y = 157,
+	c_FaderDepth_L = 120,
+	c_FaderDepth_Vert_X = 169,
+	c_FaderDepth_Vert_Y = 157,
+	r_FaderDepth_L = 120,
+	r_FaderDepth_Vert_X = 340,
+	r_FaderDepth_Vert_Y = 157,
+	l_FaderRate_L = 120,
+	l_FaderRate_Vert_X = 51,
+	l_FaderRate_Vert_Y = 157,
+	c_FaderRate_L = 120,
+	c_FaderRate_Vert_X = 216,
+	c_FaderRate_Vert_Y = 157,
+	r_FaderRate_L = 120,
+	r_FaderRate_Vert_X = 386,
+	r_FaderRate_Vert_Y = 157,
+	l_FaderFeedback_L = 120,
+	l_FaderFeedback_Vert_X = 105,
+	l_FaderFeedback_Vert_Y = 157,
+	c_FaderFeedback_L = 120,
+	c_FaderFeedback_Vert_X = 270,
+	c_FaderFeedback_Vert_Y = 157,
+	r_FaderFeedback_L = 120,
+	r_FaderFeedback_Vert_X = 440,
+	r_FaderFeedback_Vert_Y = 157,
+	l_CC_Depth_X = -3,
+	l_CC_Depth_Y = 277,
+	c_CC_Depth_X = 160,
+	c_CC_Depth_Y = 277,
+	r_CC_Depth_X = 330,
+	r_CC_Depth_Y = 277,
+	l_CC_Rate_X = 45,
+	l_CC_Rate_Y = 277,
+	c_CC_Rate_X = 209,
+	c_CC_Rate_Y = 277,
+	r_CC_Rate_X = 377,
+	r_CC_Rate_Y = 277,
+	l_CC_Feedback_X = 97,
+	l_CC_Feedback_Y = 277,
+	c_CC_Feedback_X = 265,
+	c_CC_Feedback_Y = 277,
+	r_CC_Feedback_X = 430,
+	r_CC_Feedback_Y = 277,
+	kICC_W = 70,
+	kICC_H = 30,
+	kIRadioButtonsControl_N = 2,
+	kIRBC_W = 96,  // width of bitmap
+	kIRBC_H = 26,  // height of one of the bitmap images + 2 for image border 
+	kIRadioButtonsControl_V_X_LFO = 317,
+	kIRadioButtonsControl_V_Y_LFO = 40,
+	kLFObuttons = 2,  // number of vertical buttons for waveform
+	// ITextControl
+	kISwitchControl_2_N = 2,  // # of sub-bitmaps.
+	kISwitchControl_2_X = 75,  // position of left side of control
+	kISwitchControl_2_Y = 55,  // position of top of control
+	knob_Gain_X = 165,
+    knob_Gain_Y = 48,
+	CC_Gain_X = 150,
+	CC_Gain_Y = 85,
+	knob_DW_X = 245,
+	knob_DW_Y = 48,
+	CC_DW_X = 233,
+	CC_DW_Y = 85,
+	knob_Frames = 64
 };
 
 int const channelCount = 2;
@@ -196,9 +200,25 @@ void LCRChorus::createGraphics() {
 	captionControlRFeedback->DisablePrompt(false);
 	pGraphics->AttachControl(captionControlRFeedback);
 
+	// gain knob
+	GetParam(KnobGainControl)->InitDouble("Gain", 50, 0., 100.0, 0.01, "%");
+	GetParam(KnobGainControl)->SetShape(1);
+	bitmap = pGraphics->LoadIBitmap(KNOB_ID, KNOB_FN, knob_Frames);
+	pGraphics->AttachControl(new IKnobMultiControl(this, knob_Gain_X, knob_Gain_Y, KnobGainControl, &bitmap));
+	ICaptionControl *captionControlGain = new ICaptionControl(this, IRECT(CC_Gain_X, CC_Gain_Y, (CC_Gain_X + kICC_W), (CC_Gain_Y + kICC_H)), KnobGainControl, &text);
+	captionControlGain->DisablePrompt(false);
+	pGraphics->AttachControl(captionControlGain);
+
+	// dry/wet knob
+	GetParam(KnobDryWetControl)->InitDouble("Wetness", 50, 0., 100.0, 0.01, "%");
+	GetParam(KnobDryWetControl)->SetShape(1);
+	pGraphics->AttachControl(new IKnobMultiControl(this, knob_DW_X, knob_DW_Y, KnobDryWetControl, &bitmap));
+	ICaptionControl *captionControlDW = new ICaptionControl(this, IRECT(CC_DW_X, CC_DW_Y, (CC_DW_X + kICC_W), (CC_DW_Y + kICC_H)), KnobDryWetControl, &text);
+	captionControlDW->DisablePrompt(false);
+	pGraphics->AttachControl(captionControlDW);
 
 	// GetParam(LFOParam)->InitInt("LFO Control", 0, 0, 3, "button"); // needed if using more than 2 radio buttons 
-	// Attach the vertical IRadioButtonsControl
+	// Attach the lfo selector
 	bitmap = pGraphics->LoadIBitmap(IRADIOBUTTONSCONTROL_ID, IRADIOBUTTONSCONTROL_FN, kIRadioButtonsControl_N);
 	pGraphics->AttachControl(new IRadioButtonsControl(this, IRECT(kIRadioButtonsControl_V_X_LFO, kIRadioButtonsControl_V_Y_LFO, kIRadioButtonsControl_V_X_LFO + (kIRBC_W*kLFObuttons), kIRadioButtonsControl_V_Y_LFO + (kIRBC_H*kLFObuttons)), LFOParam, kLFObuttons, &bitmap));
 
@@ -217,19 +237,26 @@ void LCRChorus::ProcessDoubleReplacing(double** inputs, double** outputs, int nF
 
 	for (int s = 0; s < nFrames; ++s, ++in1, ++in2, ++out1, ++out2)
 	{
-		double chorusOutL = 0;
-		double chorusOutC = 0;
-		double chorusOutR = 0; 
+		if (on)
+		{
 
-		double centerIn = .5 * *in1 + .5 * *in2; // center channel 
-	 	chorusOutL = modDelayLeft.generate(in1);
-		chorusOutC = modDelayCenter.generate(&centerIn);
-		chorusOutR = modDelayRight.generate(in2); 
+			double chorusOutL = 0;
+			double chorusOutC = 0;
+			double chorusOutR = 0;
 
-		*out1 = chorusOutL + chorusOutC;
-		*out2 = chorusOutR + chorusOutC;
-		//because we are working in mono we'll just copy the left output to the right output.
-		*out2 = *out1;
+			double centerIn = .5 * *in1 + .5 * *in2; // center channel 
+			chorusOutL = modDelayLeft.generate(in1);
+			chorusOutC = modDelayCenter.generate(&centerIn);
+			chorusOutR = modDelayRight.generate(in2);
+
+			*out1 = ((wet * (chorusOutL + chorusOutC)) + ((1.0 - wet) * *in1)) * gain;
+			*out2 = ((wet * (chorusOutR + chorusOutC)) + ((1.0 - wet) * *in1)) * gain;
+		}
+		else
+		{
+			*out1 = 0;
+			*out2 = 0; 
+		}
 	}
 }
 
@@ -302,6 +329,14 @@ void LCRChorus::OnParamChange(int paramIdx)
 	  modDelayRight.updateDL(GetParam(paramIdx)->Value());
 	  break;
   case OnOffParam:
+	  if (GetParam(paramIdx)->Value() == 0)
+	  {
+		  on = true;
+	  } 
+	  else
+	  {
+		  on = false; 
+	  }
 	  break;
   case LFOParam: { 
 	  int wf = GetParam(paramIdx)->Value();
@@ -310,11 +345,18 @@ void LCRChorus::OnParamChange(int paramIdx)
 	  modDelayRight.updateLFO(GetParam(LRateFaderParam)->Value(), (OscillatorGenerator::Waveform)wf);
 	  break;
   }
-  case ModParam: {
-	  int m = GetParam(paramIdx)->Value();
-	  modDelayLeft.setModType((ModDelayGenerator::Mod)m); 
+  case KnobGainControl:
+	  if (GetGUI()) {
+		  GetGUI()->SetParameterFromPlug(KnobGainControl, GetParam(paramIdx)->Value(), false);
+	  }
+	  gain = GetParam(paramIdx)->Value() / 100;
 	  break;
-  }
+  case KnobDryWetControl:
+	  if (GetGUI()) {
+		  GetGUI()->SetParameterFromPlug(KnobDryWetControl, GetParam(paramIdx)->Value(), false);
+	  }
+	  wet = GetParam(paramIdx)->Value() / 100;
+	  break; 
   default:
 	  break;
   }

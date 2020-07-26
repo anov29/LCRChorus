@@ -26,7 +26,7 @@
 // 4 chars, single quotes. At least one capital letter
 #define PLUG_UNIQUE_ID 'LCRC'
 // make sure this is not the same as BUNDLE_MFR
-#define PLUG_MFR_ID 'LCRChorus'
+#define PLUG_MFR_ID 'LCRC'
 
 // ProTools stuff
 
