@@ -5,6 +5,8 @@
 *.suo
 *.ncb
 *.vcproj.*
+*.vcxproj*
+*xcconfig
 *.pkg
 *.dmg
 *.depend
@@ -18,6 +20,9 @@
 build-*
 ipch/*
 gui/*
+installer/*
+manual/*
+LCRChorus.xcodeproj/*
 
 Icon?
 .DS_Stor*
