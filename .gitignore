@@ -28,6 +28,7 @@
 *.ico
 *.strings
 *.xib
+*.ipch
 *Pages*
 Debug/*
 ipch/*
